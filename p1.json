@@ -1,9 +1,10 @@
 {
  "name": "Winter Olympics",
- "cover": "http://www.blagoevgrad.eu/wp-content/uploads/2018/02/olymp_2018.jpg",
+ "cover": "",
  "children": [
   {
    "name": "1.Ice Sports",
+   "code": "one",
    "children": [
     {
      "name": "Bobsleigh",
@@ -11,7 +12,7 @@
      "children": [
       {
        "name": "Gold",
-	   "cover":"https://stillmed.olympic.org/media/Images/OlympicOrg/News/2017/09/21/2017-09-21-p2018-medals-thumbnail.jpg",
+	   "cover":"https://www.designyourway.net/blog/wp-content/uploads/2018/02/gold-texture-golden-gold-background-700x467.jpg",
        "children": [
         {"name": "Germany", "size": 3},
         {"name": "Canada", "size": 1}
@@ -240,6 +241,7 @@
    
      {
    "name": "2.Alpine, Skiing and Snowboarding",
+   "code": "two",
    "children": [
     {
      "name": "Alpine Skiing",
@@ -366,6 +368,7 @@
    
      {
    "name": "Nordic Sports",
+   "code": "three",
    "children": [
     {
      "name": "Biathlon",
