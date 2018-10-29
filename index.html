@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<meta charset="UTF-8">
+	<title>Exportaciones de productos tradicionales a Estados Unidos</title>
+	<style type="text/css">
+		.general{			
+			font-family: 'Alegreya', serif;
+			font-size: 18px;			
+		}
+
+		.label{
+			font-size: 18px;
+			font-family: 'Alegreya', serif;
+		}
+		.label2{
+			font-size: 20px;
+			font-family: 'Alegreya', serif;
+		}
+		.legend text,
+		.axis text {
+			font-size: 13px;
+			fill: #333;
+		}
+
+		.axis path,
+		.axis line{
+			fill: none;
+			stroke-width: 1px;
+			stroke: #777;
+		}
+
+		.circle{
+			fill-opacity: 0.65;
+		}
+
+		.bubble{
+			opacity: 1;
+			transition: opacity 0.3s;
+		}
+
+		.bubble:hover text{
+			opacity: 1;
+		}
+
+		.bubble:hover circle{
+			fill-opacity: 1;
+		}
+
+		.legend rect{
+			fill-opacity: 0.75;
+		}
+
+		.legeng:hover rect{
+			fill-opacity:1;
+		}		
+
+		div.tooltip {
+		  position: absolute;
+		  text-align: center;
+		  width: 180px;
+		  height: 70px;
+		  padding: 2px;
+		  font: 12px sans-serif;
+		  background: #0c0c0c;
+		  color: white;
+		  border: 0px;
+		  border-radius: 8px;
+		  pointer-events: none;
+		}
+		
+		.buttonR {
+			font-size: 13px;
+			fill: #333;	
+			font-weight: bold;			
+		}
+		
+		h1 {
+			font-weight: bold;
+			color: #fff;
+			font-size: 26px;
+			font-family: 'Alegreya', serif;
+		}
+		
+		.titulo {
+			font-weight: bold;
+			font-family: 'Alegreya', serif;
+			font-size: 46px;
+			color:  #022d07;
+		}
+		.titulo2 {
+			font-weight: bold;
+			font-family: 'Alegreya', serif;
+			font-size: 30px;
+			color:  #022d07;
+		}
+		.texto {
+			-webkit-column-count: 3; /* Chrome, Safari, Opera */
+			-moz-column-count: ; /* Firefox */
+			column-count: 2;
+			-webkit-column-gap: 40px; /* Chrome, Safari, Opera */
+			-moz-column-gap: 40px; /* Firefox */
+			column-gap: 80px;
+
+			text-align: justify;
+			text-justify: inter-word;
+			
+		}
+		.texto2 {
+			text-align: justify;
+			text-justify: inter-word;			
+		}
+		.parallax2 {
+			/* The image used */
+			background-image: url("economy2.jpg");
+
+			/* Set a specific height */
+			min-height: 200px; 
+			
+
+			/* Create the parallax scrolling effect */
+			background-attachment: fixed;
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+
+		.parallax {
+			/* The image used */
+			background-image: url("economy.jpg");
+
+			/* Set a specific height */
+			min-height: 150px; 
+			
+
+			/* Create the parallax scrolling effect */
+			background-attachment: fixed;
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+
+		
+	</style>
+	<link href="https://fonts.googleapis.com/css?family=Alegreya" rel="stylesheet"> 
+	<script type="text/javascript" src="https://d3js.org/d3.v5.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<br/>
+<br/>
+<br/>
+<div class="text-center general">
+	<div class="row">
+		<div class="text-center col-md-offset-3 col-md-6">
+			<span class="titulo">¿Qué pasó con el TLC Colombia?</span>
+			<br/><h4>
+			Las exportaciones del Carbón y el Petróleo, dos de los productos más relevantes para Colombia han caído después del TLC.
+			
+			</h4>
+		<p>	Creado por: Camilo Espitia - Código: 200812115 - Login: jc.espitia912</p>
+		
+		</div>
+		
+	</div>
+</div>
+	
+<div class="container general">
+  <div class="row">
+    <div class="col-md-offset-1 col-md-10" id="viz">
+			
+		<hr/>  
+			<span class="titulo2 texto2">Contexto</span>
+			
+		
+			<p class="texto2">
+			En el año 2012, el Tratado de Libre Comercio entre los Estados Unidos y Colombia fue aprobado (Portafolio, 2018). Existían opiniones encontradas sobre sus ventajas y desventajas para el país. Uno de los principales argumentos hacía referencia a la historia de los tratados de Estados Unidos en dónde, el país norteamericano construía barreras arancelarias después de las firmas de los acuerdos, poniendo en desventaja a países con menor poder económico. Por ejemplo, en México fueron creados los subsidios para favorecer los productos del sector agrícola estadounidense, debilitando el sector local (López, 2011).
+			</p>
+			 
+			<span class="titulo2 texto2">Objetivo</span>
+		  
+			<p class="texto2">
+				En teoría, un tratado debería incrementar tanto la eficiencia como la tasa de crecimiento económico de un país.  Esta visualización tiene el objetivo de mostrarnos el antes y el después de las exportaciones de Colombia a Estados Unidos de los productos tradicionales como el Café, el Carbón, el Petróleo, los Derivados del Petróleo y el Ferroníquel, para ver si efectivamente el tratado de libre comercio incrementó las exportaciones o las disminuyó.
+			</p>
+		<hr/>
+		<br/>
+		
+		<div class="texto">  
+			  <span class="titulo2">WHY</span>
+			  
+			  <p><strong>Tarea principal</strong>
+			  <p><strong>T1. Summarize - Trends (Tendencia de la variación acumulada):</strong> Encontrar la tendencia creciente o descendiente de todas las exportaciones de los productos tradicionales Colombianos de las últimas decadas para evaluar el efecto del TLC firmado con Estados Unidos.
+			  <p><strong>Tareas secundarias</strong><br/>
+			  <p><strong>T2. Identify - Extremes: </strong> Encontrar los años de mayor variación tanto positiva como negativa de cada producto para analizar posibles razones.
+			  <p><strong>T3. Identify - Trend (Variation):</strong> Identificar la tendencia de variación desde 1990 de la exportación de cada uno de los productos tradicionales.
+				
+			  <p>
+			  <span class="titulo2">WHAT</span>
+			  
+			  <p>
+			  La visualización se basa en una Tabla obtenida del sitio web de datos abiertos. 
+			  Sin embargo, se creó un nuevo dataset temporal dejando por fuera las exportaciones de productos no tan relevantes y la información extra.
+			<p><strong>Dataset Type:</strong> Temporal.
+			<p><strong>Dataset Availability:</strong> Static.
+			<p><strong>Attributes: </strong>
+			<p><ul>
+				<li>Attribute: Producto.  Type: Categorical </li>
+				<li>Attribute: Variación anual de la exportación.  Type: Quantitative-Diverging </li>
+				<li>Attribute: Año.  Type: Quantitative-Sequential </li>
+			</ul>
+			 </p>
+				  
+			  <span class="titulo2">HOW</span>
+			  <p><strong>Idiom:</strong> Linechart.
+			  <p><strong>Marks:</strong> Points, lines as connectors.
+			
+			<p><strong>Channels: </strong>
+			<p><ul>
+				<li>Position (Y): Para el atributo cuantitativo divergente variación. (Express)</li>
+				<li>Separated and ordered by key attribute (Year) horizontally.</li>
+			</ul>
+			 </p>  
+			
+	</div>
+	
+	<br/>
+	<br/>
+	<div class="parallax"></div>
+	<br/>
+	<div class="text-center">
+	<div class="row">
+		<div class="text-center col-md-offset-2 col-md-8">
+			<span class="titulo">¿Qué pasó con el TLC Colombia?</span>
+			<br/><h4>
+			Las exportaciones del Carbón y el Petróleo, dos de los productos más relevantes para Colombia han caído después del TLC.
+			</h4>
+		</div>
+	</div>
+	</div>
+	<br/>
+	
+	  <span class="titulo2">Instrucciones de uso:</span>
+	  <br/>1. Seleccione en el dropdown el grupo de datos que desea visualizar (Agregado o por productos). 
+	  <br/>2. Al pasar el mouse sobre uno de los puntos podrá ver en detalle el porcentaje de variación para el año.</p>
+		<select name="cars" id="selector">
+		  <option value="0">General</option>
+		  <option value="1">Café</option>
+		  <option value="2">Carbón</option>
+		  <option value="3">Derivados del petróleo</option>
+		  <option value="4">Ferroniquel</option>
+		  <option value="5">Petróleo</option>
+		  
+		</select>
+
+<script type="text/javascript">
+	var margin = {top: 30, right: 50, bottom: 40, left:40};
+	var width = 932 - margin.left - margin.right;
+	var height = 600 - margin.top - margin.bottom;
+
+	
+	var svg = d3.select('#viz')
+		.append('svg')
+		.attr('width', "100%")
+		.style('overflow', "hidden")
+        .style('font', "10px sans-serif")
+		.attr('height', height)
+	.append('g')
+		.attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
+
+		  //const svg = d3.select(DOM.svg(width, height))
+     // .style("width", "100%")
+      //.style("height", "auto")
+      //.style("overflow", "hidden")
+      //.style("font", "10px sans-serif");
+		
+	//cargo los datos
+	d3.json("https://raw.githubusercontent.com/camilospn/WinterOlympics2018/master/p1.json").then(function(data) {
+		console.log(data);	
+		
+		//var width = 932;
+		//var height = 600;
+		
+		var partition = data => {
+		  const root = d3.hierarchy(data)
+			  .sum(d => d.size)
+			  .sort((a, b) => b.height - a.height || b.value - a.value);  
+		  return d3.partition()
+			  .size([height, (root.height + 1) * width / 3])
+			(root);
+		}	
+			
+		var color3 = d3.scaleOrdinal().range(d3.quantize(d3.interpolateRainbow, 4));	
+		var	color = d3.scaleOrdinal().range(d3.quantize(d3.interpolateRainbow, 10));
+		
+		var format = d3.format(",d");
+		//inicio de la funcion
+		
+		 const root = partition(data);
+		let focus = root;
+
+  //const svg = d3.select(DOM.svg(width, height))
+     // .style("width", "100%")
+      //.style("height", "auto")
+      //.style("overflow", "hidden")
+      //.style("font", "10px sans-serif");
+	  
+	  //var svg = d3.select('#viz')
+		//.append('svg')
+	//	.attr('width', width + margin.left + margin.right)
+	//	.attr('height', height + margin.top + margin.bottom)
+	//.append('g')
+		//.attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
+	  
+
+  const cell = svg
+    .selectAll("g")
+    .data(root.descendants())
+    .enter().append("g")
+      .attr("transform", d => `translate(${d.y0},${d.x0})`);
+  
+  const rect = cell.append("rect")
+      .attr("width", d => d.y1 - d.y0 - 1)
+      .attr("height", d => rectHeight(d))
+      .attr("fill-opacity", 1) //opacidad de todos los rect.
+      .attr("fill", d => {
+        if (!d.depth) return "#ccc"; //sino tiene padre el color es gris
+        while (d.depth > 1) d = d.parent;
+        return color3( d.data.name);
+      })
+      .style("cursor", "pointer")
+      .attr("class", d => d.data.name) //le coloca la clase al rectangulo!
+      .on("click", clicked);//si le coloco la clase en esta parte queda con la del padre
+
+//  const image= cell.append("image")
+  //  .attr("xlink:href", d => d.data.cover)
+  //  .attr("x", 2)
+    //.attr("width", d => d.y1 - d.y0 - 1)
+    //.attr("height", 600)
+  //.on("click", clicked);
+    //.on('dblclick', showInfo);
+  
+  const text = cell.append("text")
+      .style("user-select", "none")
+      .attr("pointer-events", "none")
+      .attr("x", 4)
+      .attr("y", 13)
+      .attr("fill-opacity", d => +labelVisible(d));
+
+  text.append("tspan")
+      .text(d => d.data.name);
+
+  const tspan = text.append("tspan")
+      .attr("fill-opacity", d => labelVisible(d) * 0.7)
+      .text(d => ` ${format(d.value)}`);
+
+  cell.append("title")
+      .text(d => `${d.ancestors().map(d => d.data.name).reverse().join("/")}\n${format(d.value)}`);
+
+  var hola =true;
+  function clicked(p) {
+           
+    //inicio de guardar click
+    //var myWindow = window.open("", "MsgWindow", "width=200, height=100");
+    //myWindow.document.write(" -Acabo de clickear "+p.data.name);
+    var clickeado=p.data.name;
+    //fin de guardar click
+    
+    focus = focus === p ? p = p.parent : p;
+
+    root.each(d => d.target = {
+      x0: (d.x0 - p.x0) / (p.x1 - p.x0) * height,
+      x1: (d.x1 - p.x0) / (p.x1 - p.x0) * height,
+      y0: d.y0 - p.y0,
+      y1: d.y1 - p.y0
+    });
+
+    const t = cell.transition().duration(750)
+        .attr("transform", d => `translate(${d.target.y0},${d.target.x0})`);
+
+    rect.transition(t).attr("height", d => rectHeight(d.target));
+    text.transition(t).attr("fill-opacity", d => +labelVisible(d.target));
+    tspan.transition(t).attr("fill-opacity", d => labelVisible(d.target) * 0.7);
+    
+    //inicio de mi if
+       //hola = !hola;
+    //myWindow.document.write("Clickeo la depth "+p.depth);
+    if (clickeado=="Ice Sports" || clickeado=="Alpine, Skiing and Snowboarding" || clickeado=="Nordic Sports")
+    {     //myWindow.document.write(" -Entro "+clickeado);
+      if (hola)
+      {
+        //entra en zoom in
+          rect.transition(t).attr("fill", d => {
+            if (!d.depth) return "#ccc";
+            while (d.depth >2) d = d.parent;
+            return color( d.data.code);         
+        })
+
+        hola = !hola;
+        //myWindow.document.write("if "+hola);
+      }
+      else
+      {
+        //entra en zoom out
+          rect.transition(t).attr("fill", d => {
+            if (!d.depth) return "#ffffff";
+            while (d.depth >1) d = d.parent;
+            return color3( d.data.name);
+        })
+
+        hola = !hola;
+        //myWindow.document.write("else "+hola);
+      }
+    }
+    //fin de mi if
+
+
+
+  }
+  
+  function rectHeight(d) {
+    return d.x1 - d.x0 - Math.min(1, (d.x1 - d.x0) / 2);
+  }
+
+  function labelVisible(d) {
+    return d.y1 <= width && d.y0 >= 0 && d.x1 - d.x0 > 16;
+  }
+		
+		
+		
+		//fin de la funcion
+	});		
+		
+		// 7. d3's line generator
+
+</script>
+<br/>
+<br/>
+
+	  <span class="titulo2 texto2">Insights:</span>
+	  <p >
+	  La visualización nos permite obtener los siguientes insights: 
+		<ul>
+			<li class="texto2">La variación general de las exportaciones de los productos tradicionales comenzó a disminuir año tras año después de la firma del TLC con Estados Unidos, encontrando el pico más bajo en el año 2015. Desde entonces la disminución de las exportaciones se ha detenido pero apenas hasta dejar de disminuir año tras año.</li>
+			<li class="texto2">El Carbón y el Petróleo también encontraron sus picos más bajos en el año 2015 y en general muestran una tendencia decreciente desde 2012, cuando fue aprobado el TLC.</li>
+			<li class="texto2">El Café ha comenzado a variar mucho menos con respecto a las dos décadas anteriores al TLC, sin embargo, no muestra un crecimiento, tan sólo disminución en la variación.</li>
+			<li class="texto2">Por el contrario, el ferroníquel, encontró su pico más alto en 2014 después de la firma del tratado y su pico más bajo el año siguiente, probablemente por una demanda extra en 2014.</li>
+			<li class="texto2">Por último, los productos derivados del Petróleo han mantenido una variación similar a la del periodo previo a la firma del tratado.</li>
+			<li class="texto2">En conclusión, las exportaciones de dos de los productos más significativos de los productos tradicionales que exporta Colombia han caído, mientras que los demás se han mantenido o alcanzado una estabilidad. Sin embargo, ninguno ha presentado un aumento en la variación de las exportaciones, negando directamente el efecto esperado del TLC al brindarle a Colombia el acceso al muy significativo mercado norteamericano.</li>
+		</ul>
+	</p>
+<br/>
+		
+	<br/>
+	<div class="parallax2"></div>
+	<br/>
+	
+	<div class="texto2">
+		<span class="titulo2">LICENSE:</span>
+		<p>
+		Copyright 2018 Camilo Espitia
+		<br/> <br/>
+		Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+		<br/><br/>
+		The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+		<br/><br/>
+		THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+		</p>
+	</div>
+	
+
+	</div>
+	</div>
+	</div>
+</body>
+</html>
+
+
+
+
+
+
