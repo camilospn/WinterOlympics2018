@@ -29,21 +29,127 @@
     },
     {
      "name": "Deporte 2",
-     "children": [
-      {"name": "BetweennessCentrality", "size": 3},
-      {"name": "LinkDistance", "size": 4},
-      {"name": "MaxFlowMinCut", "size": 5},
-      {"name": "ShortestPaths", "size": 1},
-      {"name": "SpanningTree", "size": 1}
+          "children": [
+      {
+       "name": "Gold",
+       "children": [
+        {"name": "Germany", "size": 3},
+        {"name": "Canada", "size": 1}
+      ]},
+      {
+       "name": "Silver",
+       "children": [
+        {"name": "Germany", "size": 2},
+        {"name": "Canada", "size": 2}
+      ]},
+      {
+       "name": "Bronze",
+       "children": [
+        {"name": "Germany", "size": 1},
+        {"name": "Canada", "size": 3}
+      ]}
      ]
     },
     {
      "name": "Deporte 3",
+          "children": [
+      {
+       "name": "Gold",
+       "children": [
+        {"name": "Germany", "size": 3},
+        {"name": "Canada", "size": 1}
+      ]},
+      {
+       "name": "Silver",
+       "children": [
+        {"name": "Germany", "size": 2},
+        {"name": "Canada", "size": 2}
+      ]},
+      {
+       "name": "Bronze",
+       "children": [
+        {"name": "Germany", "size": 1},
+        {"name": "Canada", "size": 3}
+      ]}
+     ]
+    }
+   ]
+   },
+   
+     {
+   "name": "Ice Sports",
+   "children": [
+    {
+     "name": "Bobsleigh",
      "children": [
-      {"name": "AspectRatioBanker", "size": 5}
+      {
+       "name": "Gold",
+       "children": [
+        {"name": "Germany", "size": 3},
+        {"name": "Canada", "size": 1}
+      ]},
+      {
+       "name": "Silver",
+       "children": [
+        {"name": "Germany", "size": 2},
+        {"name": "Canada", "size": 2}
+      ]},
+      {
+       "name": "Bronze",
+       "children": [
+        {"name": "Germany", "size": 1},
+        {"name": "Canada", "size": 3}
+      ]}
+     ]
+    },
+    {
+     "name": "Deporte 2",
+          "children": [
+      {
+       "name": "Gold",
+       "children": [
+        {"name": "Germany", "size": 3},
+        {"name": "Canada", "size": 1}
+      ]},
+      {
+       "name": "Silver",
+       "children": [
+        {"name": "Germany", "size": 2},
+        {"name": "Canada", "size": 2}
+      ]},
+      {
+       "name": "Bronze",
+       "children": [
+        {"name": "Germany", "size": 1},
+        {"name": "Canada", "size": 3}
+      ]}
+     ]
+    },
+    {
+     "name": "Deporte 3",
+          "children": [
+      {
+       "name": "Gold",
+       "children": [
+        {"name": "Germany", "size": 3},
+        {"name": "Canada", "size": 1}
+      ]},
+      {
+       "name": "Silver",
+       "children": [
+        {"name": "Germany", "size": 2},
+        {"name": "Canada", "size": 2}
+      ]},
+      {
+       "name": "Bronze",
+       "children": [
+        {"name": "Germany", "size": 1},
+        {"name": "Canada", "size": 3}
+      ]}
      ]
     }
    ]
    }
+   
   ]
 }
