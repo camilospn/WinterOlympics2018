@@ -355,7 +355,7 @@
    "name": "Nordic Sports",
    "children": [
     {
-     "name": "Alpine Skiing",
+     "name": "Biathlon",
      "children": [
       {
        "name": "Gold",
@@ -378,7 +378,7 @@
      ]
     },
     {
-     "name": "Freestyle Skiing",
+     "name": "Cross-Country Skiing",
           "children": [
       {
        "name": "Gold",
@@ -400,6 +400,52 @@
       ]}
      ]
     },
+    {
+     "name": "Ski Jumping",
+          "children": [
+      {
+       "name": "Gold",
+       "children": [
+        {"name": "", "size": 3},
+        {"name": "", "size": 1}
+      ]},
+      {
+       "name": "Silver",
+       "children": [
+        {"name": "", "size": 2},
+        {"name": "", "size": 2}
+      ]},
+      {
+       "name": "Bronze",
+       "children": [
+        {"name": "", "size": 1},
+        {"name": "", "size": 3}
+      ]}
+     ]
+    },
+	    {
+     "name": "Ski Jumping",
+          "children": [
+      {
+       "name": "Gold",
+       "children": [
+        {"name": "", "size": 3},
+        {"name": "", "size": 1}
+      ]},
+      {
+       "name": "Silver",
+       "children": [
+        {"name": "", "size": 2},
+        {"name": "", "size": 2}
+      ]},
+      {
+       "name": "Bronze",
+       "children": [
+        {"name": "", "size": 1},
+        {"name": "", "size": 3}
+      ]}
+     ]
+    }
     {
      "name": "Snowboarding",
           "children": [
