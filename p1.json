@@ -3,7 +3,7 @@
  "cover": "",
  "children": [
   {
-   "name": "1.Ice Sports",
+   "name": "Ice Sports",
    "code": "one",
    "children": [
     {
@@ -12,7 +12,6 @@
      "children": [
       {
        "name": "Gold",
-	   "cover":"https://www.designyourway.net/blog/wp-content/uploads/2018/02/gold-texture-golden-gold-background-700x467.jpg",
        "children": [
         {"name": "Germany", "size": 3},
         {"name": "Canada", "size": 1}
@@ -240,7 +239,7 @@
    },
    
      {
-   "name": "2.Alpine, Skiing and Snowboarding",
+   "name": "Alpine, Skiing and Snowboarding",
    "code": "two",
    "children": [
     {
