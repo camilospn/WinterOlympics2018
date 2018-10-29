@@ -16,8 +16,9 @@
       {
        "name": "Silver",
        "children": [
-        {"name": "Germany", "size": 2},
-        {"name": "Canada", "size": 2}
+        {"name": "USA", "size": 1},
+        {"name": "Korea", "size": 1},
+		{"name": "Germany", "size": 1}
       ]},
       {
        "name": "Bronze",
@@ -28,7 +29,7 @@
      ]
     },
     {
-     "name": "Deporte 2",
+     "name": "Luge",
           "children": [
       {
        "name": "Gold",
@@ -37,7 +38,7 @@
         {"name": "Canada", "size": 1}
       ]},
       {
-       "name": "Silver",
+       "name": "Skeleton",
        "children": [
         {"name": "Germany", "size": 2},
         {"name": "Canada", "size": 2}
