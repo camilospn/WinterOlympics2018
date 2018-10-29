@@ -2,7 +2,7 @@
  "name": "Winter Olympics",
  "children": [
   {
-   "name": "Ice Sports",
+   "name": "1.Ice Sports",
    "children": [
     {
      "name": "Bobsleigh",
@@ -199,7 +199,7 @@
      ]
     },
     {
-     "name": "Deporte 8",
+     "name": "Curling",
           "children": [
       {
        "name": "Gold",
@@ -229,7 +229,7 @@
    },
    
      {
-   "name": "Nordic Sports",
+   "name": "2.Alpine, Skiing and Snowboarding",
    "children": [
     {
      "name": "Alpine Skiing",
@@ -237,20 +237,33 @@
       {
        "name": "Gold",
        "children": [
-        {"name": "Germany", "size": 3},
-        {"name": "Canada", "size": 1}
+        {"name": "Austria", "size": 3},
+        {"name": "Sweden", "size": 2},
+		{"name": "Switzerland", "size": 2},
+		{"name": "Czech Republic", "size": 1},
+		{"name": "Italy", "size": 1},
+		{"name": "USA", "size": 1},
+		{"name": "Norway", "size": 1}		
       ]},
       {
        "name": "Silver",
        "children": [
-        {"name": "Germany", "size": 2},
-        {"name": "Canada", "size": 2}
+        {"name": "Norway", "size": 4},
+        {"name": "Switzerland", "size": 3},
+		{"name": "Austria", "size": 2},
+		{"name": "USA", "size": 1},
+		{"name": "France", "size": 1}
       ]},
       {
        "name": "Bronze",
        "children": [
-        {"name": "Germany", "size": 1},
-        {"name": "Canada", "size": 3}
+        {"name": "Austria", "size": 2},
+        {"name": "Switzerland", "size": 2},
+		{"name": "Norway", "size": 2},
+		{"name": "France", "size": 2},
+		{"name": "USA", "size": 1},
+		{"name": "Liechtenstein", "size": 1},
+		{"name": "Italy", "size": 1}
       ]}
      ]
     },
@@ -260,20 +273,36 @@
       {
        "name": "Gold",
        "children": [
-        {"name": "Germany", "size": 3},
-        {"name": "Canada", "size": 1}
+        {"name": "Canada", "size": 4},
+        {"name": "Ukraine", "size": 1},
+		{"name": "Norway", "size": 1},
+		{"name": "Belarus", "size": 1},
+		{"name": "France", "size": 1},
+		{"name": "USA", "size": 1},
+		{"name": "Switzerland", "size": 1}
       ]},
       {
        "name": "Silver",
        "children": [
-        {"name": "Germany", "size": 2},
-        {"name": "Canada", "size": 2}
+        {"name": "China", "size": 2},
+        {"name": "USA", "size": 2},
+		{"name": "Canada", "size": 2},
+		{"name": "Switzerland", "size": 2},
+		{"name": "France", "size": 1},
+		{"name": "Australia", "size": 1}
       ]},
       {
        "name": "Bronze",
        "children": [
-        {"name": "Germany", "size": 1},
-        {"name": "Canada", "size": 3}
+        {"name": "Olympic Athletes from Russia", "size": 2},
+        {"name": "Canada", "size": 1},
+		{"name": "China", "size": 1},
+		{"name": "Kazakhstan", "size": 1},
+		{"name": "New Zealand", "size": 1},
+		{"name": "United Kingdom", "size": 1},
+		{"name": "USA", "size": 1},
+		{"name": "Switzerland", "size": 1},
+		{"name": "Japan", "size": 1}
       ]}
      ]
     },
@@ -283,20 +312,114 @@
       {
        "name": "Gold",
        "children": [
-        {"name": "Germany", "size": 3},
-        {"name": "Canada", "size": 1}
+        {"name": "USA", "size": 4},
+        {"name": "Czech Republic", "size": 1},
+		{"name": "Switzerland", "size": 1},
+		{"name": "Italy", "size": 1},
+		{"name": "Austria", "size": 1},
+		{"name": "Canada", "size": 1},
+		{"name": "France", "size": 1}
       ]},
       {
        "name": "Silver",
        "children": [
-        {"name": "Germany", "size": 2},
-        {"name": "Canada", "size": 2}
+        {"name": "Canada", "size": 2},
+        {"name": "USA", "size": 2},
+		{"name": "Germany", "size": 1},
+		{"name": "Korea", "size": 1},
+		{"name": "France", "size": 1},
+		{"name": "Japan", "size": 1},
+		{"name": "China", "size": 1},
+		{"name": "Australia", "size": 1}		
       ]},
       {
        "name": "Bronze",
        "children": [
         {"name": "Germany", "size": 1},
-        {"name": "Canada", "size": 3}
+        {"name": "Slovenia", "size": 1},
+		{"name": "Czech Republic", "size": 1},
+		{"name": "New Zealand", "size": 1},
+		{"name": "Australia", "size": 1},
+		{"name": "Canada", "size": 1},
+		{"name": "USA", "size": 1},
+		{"name": "Finland", "size": 1},
+		{"name": "United Kingdom", "size": 1},
+		{"name": "Spain", "size": 1}
+      ]}
+     ]
+    }
+   ]
+   },
+   
+     {
+   "name": "Nordic Sports",
+   "children": [
+    {
+     "name": "Alpine Skiing",
+     "children": [
+      {
+       "name": "Gold",
+       "children": [
+        {"name": "", "size": 3},
+        {"name": "", "size": 1}
+      ]},
+      {
+       "name": "Silver",
+       "children": [
+        {"name": "", "size": 2},
+        {"name": "", "size": 2}
+      ]},
+      {
+       "name": "Bronze",
+       "children": [
+        {"name": "", "size": 1},
+        {"name": "", "size": 3}
+      ]}
+     ]
+    },
+    {
+     "name": "Freestyle Skiing",
+          "children": [
+      {
+       "name": "Gold",
+       "children": [
+        {"name": "", "size": 3},
+        {"name": "", "size": 1}
+      ]},
+      {
+       "name": "Silver",
+       "children": [
+        {"name": "", "size": 2},
+        {"name": "", "size": 2}
+      ]},
+      {
+       "name": "Bronze",
+       "children": [
+        {"name": "", "size": 1},
+        {"name": "", "size": 3}
+      ]}
+     ]
+    },
+    {
+     "name": "Snowboarding",
+          "children": [
+      {
+       "name": "Gold",
+       "children": [
+        {"name": "", "size": 3},
+        {"name": "", "size": 1}
+      ]},
+      {
+       "name": "Silver",
+       "children": [
+        {"name": "", "size": 2},
+        {"name": "", "size": 2}
+      ]},
+      {
+       "name": "Bronze",
+       "children": [
+        {"name": "", "size": 1},
+        {"name": "", "size": 3}
       ]}
      ]
     }
