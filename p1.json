@@ -38,7 +38,7 @@
         {"name": "Canada", "size": 1}
       ]},
       {
-       "name": "Skeleton",
+       "name": "Silver",
        "children": [
         {"name": "Germany", "size": 2},
         {"name": "Canada", "size": 2}
@@ -81,7 +81,7 @@
    "name": "Nordic Sports",
    "children": [
     {
-     "name": "Bobsleigh",
+     "name": "Alpine Skiing",
      "children": [
       {
        "name": "Gold",
@@ -104,7 +104,7 @@
      ]
     },
     {
-     "name": "Deporte 2",
+     "name": "Freestyle Skiing",
           "children": [
       {
        "name": "Gold",
@@ -127,7 +127,7 @@
      ]
     },
     {
-     "name": "Deporte 3",
+     "name": "Snowboarding",
           "children": [
       {
        "name": "Gold",
