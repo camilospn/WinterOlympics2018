@@ -23,8 +23,8 @@
       {
        "name": "Bronze",
        "children": [
-        {"name": "Germany", "size": 1},
-        {"name": "Canada", "size": 3}
+        {"name": "Latvia", "size": 1},
+        {"name": "Canada", "size": 1}
       ]}
      ]
     },
@@ -35,45 +35,196 @@
        "name": "Gold",
        "children": [
         {"name": "Germany", "size": 3},
-        {"name": "Canada", "size": 1}
+        {"name": "Austria", "size": 1}
       ]},
       {
        "name": "Silver",
        "children": [
-        {"name": "Germany", "size": 2},
-        {"name": "Canada", "size": 2}
+        {"name": "Germany", "size": 1},
+		{"name": "Austria", "size": 1},
+		{"name": "Canada", "size": 1},
+        {"name": "USA", "size": 1}
       ]},
       {
        "name": "Bronze",
        "children": [
-        {"name": "Germany", "size": 1},
-        {"name": "Canada", "size": 3}
+        {"name": "Germany", "size": 2},
+		{"name": "Canada", "size": 1},
+        {"name": "Austria", "size": 1}
       ]}
      ]
     },
     {
-     "name": "Deporte 3",
+     "name": "Skeleton",
           "children": [
       {
        "name": "Gold",
        "children": [
-        {"name": "Germany", "size": 3},
-        {"name": "Canada", "size": 1}
+        {"name": "United Kingdom", "size": 1},
+        {"name": "Korea", "size": 1}
       ]},
       {
        "name": "Silver",
        "children": [
-        {"name": "Germany", "size": 2},
-        {"name": "Canada", "size": 2}
+        {"name": "Germany", "size": 1},
+        {"name": "Olympic Athletes from Russia", "size": 1}
       ]},
       {
        "name": "Bronze",
        "children": [
+        {"name": "United Kingdom", "size": 2}
+      ]}
+     ]
+    },
+    {
+     "name": "Ice Hockey",
+          "children": [
+      {
+       "name": "Gold",
+       "children": [
+        {"name": "Olympic Athletes from Russia", "size": 1},
+        {"name": "USA", "size": 1}
+      ]},
+      {
+       "name": "Silver",
+       "children": [
         {"name": "Germany", "size": 1},
-        {"name": "Canada", "size": 3}
+        {"name": "Canada", "size": 1}
+      ]},
+      {
+       "name": "Bronze",
+       "children": [
+        {"name": "Canada", "size": 1},
+        {"name": "Finland", "size": 1}
+      ]}
+     ]
+    },
+    {
+     "name": "Figure Skating",
+          "children": [
+      {
+       "name": "Gold",
+       "children": [
+        {"name": "Canada", "size": 2},
+        {"name": "Olympic Athletes from Russia", "size": 1},
+		{"name": "Japan", "size": 1},
+		{"name": "Germany", "size": 1}
+      ]},
+      {
+       "name": "Silver",
+       "children": [
+        {"name": "Olympic Athletes from Russia", "size": 2},
+        {"name": "Japan", "size": 1},
+		{"name": "France", "size": 1},
+		{"name": "China", "size": 1}
+      ]},
+      {
+       "name": "Bronze",
+       "children": [
+        {"name": "Canada", "size": 1},
+		{"name": "USA", "size": 2},
+        {"name": "Spain", "size": 1}
+      ]}
+     ]
+    },
+    {
+     "name": "Speed Skating",
+          "children": [
+      {
+       "name": "Gold",
+       "children": [
+        {"name": "Netherlands", "size": 7},
+        {"name": "Japan", "size": 3},
+		{"name": "Norway", "size": 2},
+		{"name": "Korea", "size": 1},
+		{"name": "Canada", "size": 1}
+      ]},
+      {
+       "name": "Silver",
+       "children": [
+        {"name": "Netherlands", "size": 4},
+        {"name": "Korea", "size": 4},
+		{"name": "Japan", "size": 2},
+		{"name": "Belgium", "size": 1},
+		{"name": "Czech Republic", "size": 1},
+		{"name": "Canada", "size": 1},
+		{"name": "Norway", "size": 1}
+      ]},
+      {
+       "name": "Bronze",
+       "children": [
+        {"name": "Netherlands", "size": 5},
+        {"name": "Korea", "size": 2},
+		{"name": "USA", "size": 2},
+		{"name": "Japan", "size": 1},
+		{"name": "Italy", "size": 1},
+		{"name": "China", "size": 1},
+		{"name": "Norway", "size": 1},
+		{"name": "Czech Republic", "size": 1},
+      ]}
+     ]
+    },
+    {
+     "name": "Short Track Speed Skating",
+          "children": [
+      {
+       "name": "Gold",
+       "children": [
+        {"name": "Korea", "size": 3},
+        {"name": "Canada", "size": 1},
+		{"name": "Netherlands", "size": 1},
+		{"name": "China", "size": 1},
+		{"name": "Italy", "size": 1},
+		{"name": "Hungary", "size": 1}
+      ]},
+      {
+       "name": "Silver",
+       "children": [
+        {"name": "China", "size": 2},
+        {"name": "Netherlands", "size": 2},
+		{"name": "Italy", "size": 1},
+		{"name": "USA", "size": 1},
+		{"name": "Canada", "size": 1},
+		{"name": "Korea", "size": 1}
+      ]},
+      {
+       "name": "Bronze",
+       "children": [
+        {"name": "Canada", "size": 3},
+        {"name": "Korea", "size": 2},
+		{"name": "Olympic Athletes from Russia", "size": 1},
+		{"name": "Italy", "size": 1},
+		{"name": "Netherlands", "size": 1}
+      ]}
+     ]
+    },
+    {
+     "name": "Deporte 8",
+          "children": [
+      {
+       "name": "Gold",
+       "children": [
+        {"name": "USA", "size": 1},
+        {"name": "Canada", "size": 1},
+		{"name": "Sweden", "size": 1}
+      ]},
+      {
+       "name": "Silver",
+       "children": [
+        {"name": "Sweden", "size": 1},
+        {"name": "Switzerland", "size": 1},
+		{"name": "Korea", "size": 1}
+      ]},
+      {
+       "name": "Bronze",
+       "children": [
+        {"name": "Switzerland", "size": 1},
+        {"name": "Norway", "size": 1},
+		{"name": "Japan", "size": 1}
       ]}
      ]
     }
+	
    ]
    },
    
