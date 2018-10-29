@@ -11,6 +11,7 @@
      "children": [
       {
        "name": "Gold",
+	   "cover":"https://stillmed.olympic.org/media/Images/OlympicOrg/News/2017/09/21/2017-09-21-p2018-medals-thumbnail.jpg",
        "children": [
         {"name": "Germany", "size": 3},
         {"name": "Canada", "size": 1}
