@@ -6,6 +6,7 @@
    "children": [
     {
      "name": "Bobsleigh",
+	 "code": "one",
      "children": [
       {
        "name": "Gold",
@@ -30,6 +31,7 @@
     },
     {
      "name": "Luge",
+	 "code": "two",
           "children": [
       {
        "name": "Gold",
@@ -56,6 +58,7 @@
     },
     {
      "name": "Skeleton",
+	 "code": "three",
           "children": [
       {
        "name": "Gold",
@@ -78,6 +81,7 @@
     },
     {
      "name": "Ice Hockey",
+	 "code": "four",
           "children": [
       {
        "name": "Gold",
@@ -101,6 +105,7 @@
     },
     {
      "name": "Figure Skating",
+	 "code": "five",
           "children": [
       {
        "name": "Gold",
@@ -129,6 +134,7 @@
     },
     {
      "name": "Speed Skating",
+	 "code": "six",
           "children": [
       {
        "name": "Gold",
@@ -166,6 +172,7 @@
     },
     {
      "name": "Short Track Speed Skating",
+	 "code": "seven",
           "children": [
       {
        "name": "Gold",
@@ -200,6 +207,7 @@
     },
     {
      "name": "Curling",
+	 "code": "eight",
           "children": [
       {
        "name": "Gold",
