@@ -183,16 +183,16 @@
 			
 		<hr/>  
 			<span class="titulo2 texto2">Context</span>
-			
-		
 			<p class="texto2">
-			En el año 2012, el Tratado de Libre Comercio entre los Estados Unidos y Colombia fue aprobado (Portafolio, 2018). Existían opiniones encontradas sobre sus ventajas y desventajas para el país. Uno de los principales argumentos hacía referencia a la historia de los tratados de Estados Unidos en dónde, el país norteamericano construía barreras arancelarias después de las firmas de los acuerdos, poniendo en desventaja a países con menor poder económico. Por ejemplo, en México fueron creados los subsidios para favorecer los productos del sector agrícola estadounidense, debilitando el sector local (López, 2011).
+			.
 			</p>
 			 
 			<span class="titulo2 texto2">Objective</span>
-		  
-			<p class="texto2">
-				En teoría, un tratado debería incrementar tanto la eficiencia como la tasa de crecimiento económico de un país.  Esta visualización tiene el objetivo de mostrarnos el antes y el después de las exportaciones de Colombia a Estados Unidos de los productos tradicionales como el Café, el Carbón, el Petróleo, los Derivados del Petróleo y el Ferroníquel, para ver si efectivamente el tratado de libre comercio incrementó las exportaciones o las disminuyó.
+		  	<p class="texto2">
+				Give an overview of the Winter Olympics to someone interested but, not familiar with the games, by allowing him/her to Explore the classification of sports and disciplines.
+<br/>Identify which countries dominated each discipline.
+<br/>Identify which winter disciplines have the most medals in each category.
+
 			</p>
 		<hr/>
 		<br/>
@@ -201,37 +201,48 @@
 			  <span class="titulo2">WHY</span>
 			  
 			  <p><strong>Main Tasks</strong>
-			  <p><strong>T1. Summarize - Trends (Tendencia de la variación acumulada):</strong> Encontrar la tendencia creciente o descendiente de todas las exportaciones de los productos tradicionales Colombianos de las últimas decadas para evaluar el efecto del TLC firmado con Estados Unidos.
+			  <p><strong>T1. Explore - Topology: (Overview of Winter Sports)</strong> Explore the classification of sports and disciplines at the Winter Olympics to give an overview.
 			  <p><strong>Secondary Tasks</strong><br/>
-			  <p><strong>T2. Identify - Extremes: </strong> Encontrar los años de mayor variación tanto positiva como negativa de cada producto para analizar posibles razones.
-			  <p><strong>T3. Identify - Trend (Variation):</strong> Identificar la tendencia de variación desde 1990 de la exportación de cada uno de los productos tradicionales.
-				
+			  <p><strong>T2. Browse - Features: (Winner Country)</strong> By knowing the location (e.g. Alpine Sports>Snowboarding>Gold) it is possible to find the country that dominated the discipline, in this case it was USA.
+			  <p><strong>T3. Identify - Extremes: (Disciplines)</strong> Find the discipline that has the most medals in each category of winter sports.
+			  <p><strong>Derivation Tasks</strong><br/>
+			  <p><strong>T4. Derive - Topology:</strong> Derive a new dataset based on the general classification of winter sports and medal count per discipline.
+
 			  <p>
 			  <span class="titulo2">WHAT</span>
 			  
 			  <p>
-			  La visualización se basa en una Tabla obtenida del sitio web de datos abiertos. 
-			  Sin embargo, se creó un nuevo dataset temporal dejando por fuera las exportaciones de productos no tan relevantes y la información extra.
-			<p><strong>Dataset Type:</strong> Temporal.
+			  Original information was available at the Guardian: https://www.theguardian.com/sport/ng-interactive/2018/feb/09/winter-olympics-latest-medal-table-for-pyeongchang-2018
+<br/>There was an accordion menu to choose the discipline and see the winners per category but not overall.
+<br/>The information available at the BBC website was processed manually to build a tree. The tree starts with the three types of winter sports, then, each sports splits into its different disciplines, later, each discipline splits into three categories: Gold, Silver and Bronze, to finally find the countries as leafs and answer who won more medals of each kind. The resulting dataset is available as JSON and has the following characteristics: 
+			<p><strong>Dataset Type:</strong> Tree.
 			<p><strong>Dataset Availability:</strong> Static.
 			<p><strong>Attributes: </strong>
 			<p><ul>
-				<li>Attribute: Producto.  Type: Categorical </li>
-				<li>Attribute: Variación anual de la exportación.  Type: Quantitative-Diverging </li>
-				<li>Attribute: Año.  Type: Quantitative-Sequential </li>
+				<li>Attribute: Type of Sport. (Ice Sports, Nordic Sports, etc.) Type: Categorical </li>
+				<li>Attribute: Discipline. (Figure Skating, Ice Hockey) Type: Categorical </li>
+				<li>Attribute: Type of Medal. (Gold, Silver, Bronze) Type: Categorical </li>
+				<li>Attribute: Country. Type: Categorical </li>
+				<li>Attribute: Number of Medals. Type: Quantitative-Sequential </li>
+				
 			</ul>
 			 </p>
 				  
 			  <span class="titulo2">HOW</span>
-			  <p><strong>Idiom:</strong> Linechart.
-			  <p><strong>Marks:</strong> Points, lines as connectors.
+			  <p><strong>Idiom:</strong> Icicle Treemap. 	.
+			  <p><strong>Marks:</strong> Shape (Rectangles).
 			
 			<p><strong>Channels: </strong>
 			<p><ul>
-				<li>Position (Y): Para el atributo cuantitativo divergente variación. (Express)</li>
-				<li>Separated and ordered by key attribute (Year) horizontally.</li>
+				<li><strong>Color: </strong> 
+Attributes: Type of Sports / Disciplines Type: Categorical, unordered. (Encoding: Align, Arrange, Separate.)</li>
+				<li><strong>Area 2D: </strong> 
+Attribute: Number of medals Type: Quantitative, sequential. (Encoding: Express)
+</li>
+				
 			</ul>
-			 </p>  
+			 </p>
+			<p><strong>Interaction:</strong> Select to Filter and zoom in and out.			 
 			
 	</div>
 	
@@ -293,8 +304,6 @@
 		
 		const root = partition(data);
 		let focus = root;
-
-	  
 
 		const cell = svg
 			.selectAll("g")
@@ -376,9 +385,10 @@
 
 		rect.transition(t).attr("height", d => rectHeight(d.target));
 		text.transition(t).attr("fill-opacity", d => +labelVisible(d.target));
-		//no funciona el cambio de tamanio... 
+		//no funciona el cambio de tamanio en edge... 
 		text.transition(t).attr("font-size", d => textHeight(d.target));
 		text.transition(t).attr("y", d => textHeight(d.target));
+		
 		tspan.transition(t).attr("fill-opacity", d => labelVisible(d.target) * 0.7);
 		
 		//inicio del if para 
