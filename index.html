@@ -272,6 +272,9 @@ Attribute: Number of medals Type: Quantitative, sequential. (Encoding: Express)
 	var width = 932; //- margin.left - margin.right;
 	var height = 600; //- margin.top - margin.bottom;
 
+	var div = d3.select("body").append("div")
+    .attr("class", "tooltip")
+    .style("opacity", 0);
 	
 	var svg = d3.select('#viz')
 		.append('svg')
@@ -322,7 +325,11 @@ Attribute: Number of medals Type: Quantitative, sequential. (Encoding: Express)
 		  })
 		  .style("cursor", "pointer")
 		  .attr("class", d => d.data.name) //le coloca la clase al rectangulo!
-		  .on("click", clicked);//si le coloco la clase en esta parte queda con la del padre
+		  .on("click", clicked);
+		  //puede llevar mousover
+		  
+		  
+		  
 
 //  const image= cell.append("image")
   //  .attr("xlink:href", d => d.data.cover)
@@ -350,6 +357,7 @@ Attribute: Number of medals Type: Quantitative, sequential. (Encoding: Express)
 		  .attr("x", 4)
 		  .attr("y", d => textHeight(d))
 		  .attr("fill-opacity", d => +labelVisible(d));
+
 		  
 
 	  text.append("tspan")
@@ -358,9 +366,12 @@ Attribute: Number of medals Type: Quantitative, sequential. (Encoding: Express)
 	  const tspan = text.append("tspan")
 		  .attr("fill-opacity", d => labelVisible(d) * 0.7)
 		  .text(d => ` ${format(d.value)}`);
+		  
+		 
 
 	  cell.append("title")
-		  .text(d => `${d.ancestors().map(d => d.data.name).reverse().join("/")}\n${format(d.value)}`);
+		  .text(d => `${d.data.desc}`);
+		  //.text(d => `${d.ancestors().map(d => d.data.name).reverse().join("/")}\n${format(d.value)}`);
 
 	  var hola =true;
 	  function clicked(p) {
@@ -457,12 +468,11 @@ Attribute: Number of medals Type: Quantitative, sequential. (Encoding: Express)
 	  <p >
 	  The visualization presents us the following insights: 
 		<ul>
-			<li class="texto2">La variación general de las exportaciones de los productos tradicionales comenzó a disminuir año tras año después de la firma del TLC con Estados Unidos, encontrando el pico más bajo en el año 2015. Desde entonces la disminución de las exportaciones se ha detenido pero apenas hasta dejar de disminuir año tras año.</li>
-			<li class="texto2">El Carbón y el Petróleo también encontraron sus picos más bajos en el año 2015 y en general muestran una tendencia decreciente desde 2012, cuando fue aprobado el TLC.</li>
-			<li class="texto2">El Café ha comenzado a variar mucho menos con respecto a las dos décadas anteriores al TLC, sin embargo, no muestra un crecimiento, tan sólo disminución en la variación.</li>
-			<li class="texto2">Por el contrario, el ferroníquel, encontró su pico más alto en 2014 después de la firma del tratado y su pico más bajo el año siguiente, probablemente por una demanda extra en 2014.</li>
-			<li class="texto2">Por último, los productos derivados del Petróleo han mantenido una variación similar a la del periodo previo a la firma del tratado.</li>
-			<li class="texto2">En conclusión, las exportaciones de dos de los productos más significativos de los productos tradicionales que exporta Colombia han caído, mientras que los demás se han mantenido o alcanzado una estabilidad. Sin embargo, ninguno ha presentado un aumento en la variación de las exportaciones, negando directamente el efecto esperado del TLC al brindarle a Colombia el acceso al muy significativo mercado norteamericano.</li>
+			<li class="texto2">The Winter Olympic sports are divided into three major categories: Ice, Alpine and Nordic Sports. The three types of sports are equally relevant since each one of them has a similar amount of medals: 122, 93 and 92 respectively.</li>
+			<li class="texto2">When zooming into Speed Skating, the sport with the most medals in the Ice Sports, we can find out that the Netherlands ruled the discipline getting the most Gold (7), Silver (4) and Bronze (5) medals. No wonder Ice skating is said to were born at that country.</li>
+			<li class="texto2">The three sports with the most medals in each of the winter sports categories are: Speed Skating - 42 medals - Category: Ice Sports; Alpine Skiing - 33 medals - Category: Alpine Sports; Cross-country Skiing - 38 Medals - Category: Nordic Sports.</li>
+			<li class="texto2">Surprisingly, in the Category Nordic Sports, Only one Nordic country won in one of the four sports. Norway was able to dominate at Ski jumping while Russia, Germany and France won in the other disciplines.</li>
+			
 		</ul>
 	</p>
 <br/>

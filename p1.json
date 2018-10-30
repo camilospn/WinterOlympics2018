@@ -137,6 +137,7 @@
     {
      "name": "Speed Skating",
 	 "code": "six",
+	 "desc":"Pairs of skaters compete against each other and the clock, gracefully lapping the 400 metre track at speeds upwards of 40 MPH.",
           "children": [
       {
        "name": "Gold",
