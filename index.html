@@ -244,43 +244,27 @@
 	  <span class="titulo2">Instrucciones de uso:</span>
 	  <br/>1. Seleccione en el dropdown el grupo de datos que desea visualizar (Agregado o por productos). 
 	  <br/>2. Al pasar el mouse sobre uno de los puntos podrá ver en detalle el porcentaje de variación para el año.</p>
-		<select name="cars" id="selector">
-		  <option value="0">General</option>
-		  <option value="1">Café</option>
-		  <option value="2">Carbón</option>
-		  <option value="3">Derivados del petróleo</option>
-		  <option value="4">Ferroniquel</option>
-		  <option value="5">Petróleo</option>
-		  
-		</select>
+		<br/>
+		<br/>
 
 <script type="text/javascript">
 	var margin = {top: 30, right: 50, bottom: 40, left:40};
-	var width = 932 - margin.left - margin.right;
-	var height = 600 - margin.top - margin.bottom;
+	var width = 932; //- margin.left - margin.right;
+	var height = 600; //- margin.top - margin.bottom;
 
 	
 	var svg = d3.select('#viz')
 		.append('svg')
-		.attr('width', "100%")
+		.attr('width', width)
 		.style('overflow', "hidden")
-        .style('font', "10px sans-serif")
-		.attr('height', height)
-	.append('g')
-		.attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
+        .style('font', "14px sans-serif")
+		.attr('height', height);
 
-		  //const svg = d3.select(DOM.svg(width, height))
-     // .style("width", "100%")
-      //.style("height", "auto")
-      //.style("overflow", "hidden")
-      //.style("font", "10px sans-serif");
 		
 	//cargo los datos
-	d3.json("https://raw.githubusercontent.com/camilospn/WinterOlympics2018/master/p1.json").then(function(data) {
+	d3.json("p1.json").then(function(data) {
 		console.log(data);	
 		
-		//var width = 932;
-		//var height = 600;
 		
 		var partition = data => {
 		  const root = d3.hierarchy(data)
@@ -291,47 +275,36 @@
 			(root);
 		}	
 			
-		var color3 = d3.scaleOrdinal().range(d3.quantize(d3.interpolateRainbow, 4));	
-		var	color = d3.scaleOrdinal().range(d3.quantize(d3.interpolateRainbow, 10));
+		var color3 = d3.scaleOrdinal(d3.schemeSet2);	
+		//var	color = d3.scaleOrdinal().range(d3.quantize(d3.interpolateRainbow, 10));
+		var color = d3.scaleOrdinal(d3.schemeSet2);	
 		
 		var format = d3.format(",d");
 		//inicio de la funcion
 		
-		 const root = partition(data);
+		const root = partition(data);
 		let focus = root;
 
-  //const svg = d3.select(DOM.svg(width, height))
-     // .style("width", "100%")
-      //.style("height", "auto")
-      //.style("overflow", "hidden")
-      //.style("font", "10px sans-serif");
-	  
-	  //var svg = d3.select('#viz')
-		//.append('svg')
-	//	.attr('width', width + margin.left + margin.right)
-	//	.attr('height', height + margin.top + margin.bottom)
-	//.append('g')
-		//.attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
 	  
 
-  const cell = svg
-    .selectAll("g")
-    .data(root.descendants())
-    .enter().append("g")
-      .attr("transform", d => `translate(${d.y0},${d.x0})`);
-  
-  const rect = cell.append("rect")
-      .attr("width", d => d.y1 - d.y0 - 1)
-      .attr("height", d => rectHeight(d))
-      .attr("fill-opacity", 1) //opacidad de todos los rect.
-      .attr("fill", d => {
-        if (!d.depth) return "#ccc"; //sino tiene padre el color es gris
-        while (d.depth > 1) d = d.parent;
-        return color3( d.data.name);
-      })
-      .style("cursor", "pointer")
-      .attr("class", d => d.data.name) //le coloca la clase al rectangulo!
-      .on("click", clicked);//si le coloco la clase en esta parte queda con la del padre
+		const cell = svg
+			.selectAll("g")
+			.data(root.descendants())
+			.enter().append("g")
+				.attr("transform", d => `translate(${d.y0},${d.x0})`);
+	  
+		const rect = cell.append("rect")
+		  .attr("width", d => d.y1 - d.y0 - 1)
+		  .attr("height", d => rectHeight(d))
+		  .attr("fill-opacity", 0.8) //opacidad de todos los rect.
+		  .attr("fill", d => {
+			if (!d.depth) return "#666666"; //sino tiene padre el color es gris
+			while (d.depth > 1) d = d.parent;
+			return color3( d.data.name);
+		  })
+		  .style("cursor", "pointer")
+		  .attr("class", d => d.data.name) //le coloca la clase al rectangulo!
+		  .on("click", clicked);//si le coloco la clase en esta parte queda con la del padre
 
 //  const image= cell.append("image")
   //  .attr("xlink:href", d => d.data.cover)
@@ -341,94 +314,114 @@
   //.on("click", clicked);
     //.on('dblclick', showInfo);
   
-  const text = cell.append("text")
-      .style("user-select", "none")
-      .attr("pointer-events", "none")
-      .attr("x", 4)
-      .attr("y", 13)
-      .attr("fill-opacity", d => +labelVisible(d));
+	  const text = cell.append("text")
+		  .style("user-select", "none")
+		  .attr("pointer-events", "none")
+		  .attr("font-size", d => textHeight(d))
+		  .attr("transform",  d => {
+			if (!d.depth) return "translate(100,600)rotate(270)"; //sino tiene padre gira
+			
+		  })
+		  .attr("fill",  d => {
+			if (!d.depth) return "#fff"; //sino tiene padre el color es diferente
+			
+		  })
+		  //font-size="12px"
+		  .attr("x", 4)
+		  .attr("y", d => textHeight(d))
+		  .attr("fill-opacity", d => +labelVisible(d));
+		  
 
-  text.append("tspan")
-      .text(d => d.data.name);
+	  text.append("tspan")
+		  .text(d => d.data.name);
 
-  const tspan = text.append("tspan")
-      .attr("fill-opacity", d => labelVisible(d) * 0.7)
-      .text(d => ` ${format(d.value)}`);
+	  const tspan = text.append("tspan")
+		  .attr("fill-opacity", d => labelVisible(d) * 0.7)
+		  .text(d => ` ${format(d.value)}`);
 
-  cell.append("title")
-      .text(d => `${d.ancestors().map(d => d.data.name).reverse().join("/")}\n${format(d.value)}`);
+	  cell.append("title")
+		  .text(d => `${d.ancestors().map(d => d.data.name).reverse().join("/")}\n${format(d.value)}`);
 
-  var hola =true;
-  function clicked(p) {
-           
-    //inicio de guardar click
-    //var myWindow = window.open("", "MsgWindow", "width=200, height=100");
-    //myWindow.document.write(" -Acabo de clickear "+p.data.name);
-    var clickeado=p.data.name;
-    //fin de guardar click
-    
-    focus = focus === p ? p = p.parent : p;
-
-    root.each(d => d.target = {
-      x0: (d.x0 - p.x0) / (p.x1 - p.x0) * height,
-      x1: (d.x1 - p.x0) / (p.x1 - p.x0) * height,
-      y0: d.y0 - p.y0,
-      y1: d.y1 - p.y0
-    });
-
-    const t = cell.transition().duration(750)
-        .attr("transform", d => `translate(${d.target.y0},${d.target.x0})`);
-
-    rect.transition(t).attr("height", d => rectHeight(d.target));
-    text.transition(t).attr("fill-opacity", d => +labelVisible(d.target));
-    tspan.transition(t).attr("fill-opacity", d => labelVisible(d.target) * 0.7);
-    
-    //inicio de mi if
-       //hola = !hola;
-    //myWindow.document.write("Clickeo la depth "+p.depth);
-    if (clickeado=="Ice Sports" || clickeado=="Alpine, Skiing and Snowboarding" || clickeado=="Nordic Sports")
-    {     //myWindow.document.write(" -Entro "+clickeado);
-      if (hola)
-      {
-        //entra en zoom in
-          rect.transition(t).attr("fill", d => {
-            if (!d.depth) return "#ccc";
-            while (d.depth >2) d = d.parent;
-            return color( d.data.code);         
-        })
-
-        hola = !hola;
-        //myWindow.document.write("if "+hola);
-      }
-      else
-      {
-        //entra en zoom out
-          rect.transition(t).attr("fill", d => {
-            if (!d.depth) return "#ffffff";
-            while (d.depth >1) d = d.parent;
-            return color3( d.data.name);
-        })
-
-        hola = !hola;
-        //myWindow.document.write("else "+hola);
-      }
-    }
-    //fin de mi if
-
-
-
-  }
-  
-  function rectHeight(d) {
-    return d.x1 - d.x0 - Math.min(1, (d.x1 - d.x0) / 2);
-  }
-
-  function labelVisible(d) {
-    return d.y1 <= width && d.y0 >= 0 && d.x1 - d.x0 > 16;
-  }
+	  var hola =true;
+	  function clicked(p) {
+			   
+		//inicio de guardar click
+		//var myWindow = window.open("", "MsgWindow", "width=200, height=100");
+		//myWindow.document.write(" -Acabo de clickear "+p.data.name);
+		var clickeado=p.data.name;
+		//fin de guardar click
 		
+		focus = focus === p ? p = p.parent : p;
+
+		root.each(d => d.target = {
+		  x0: (d.x0 - p.x0) / (p.x1 - p.x0) * height,
+		  x1: (d.x1 - p.x0) / (p.x1 - p.x0) * height,
+		  y0: d.y0 - p.y0,
+		  y1: d.y1 - p.y0
+		});
+
+		const t = cell.transition().duration(750)
+			.attr("transform", d => `translate(${d.target.y0},${d.target.x0})`);
+
+		rect.transition(t).attr("height", d => rectHeight(d.target));
+		text.transition(t).attr("fill-opacity", d => +labelVisible(d.target));
+		//no funciona el cambio de tamanio... 
+		text.transition(t).attr("font-size", d => textHeight(d.target));
+		tspan.transition(t).attr("fill-opacity", d => labelVisible(d.target) * 0.7);
 		
+		//inicio del if para 
 		
+		//myWindow.document.write("Clickeo la depth "+p.depth);
+		if (clickeado=="Ice Sports" || clickeado=="Alpine, Skiing and Snowboarding" || clickeado=="Nordic Sports")
+		{     //myWindow.document.write(" -Entro "+clickeado);
+		  if (hola)
+		  {
+			//entra en zoom in			
+			  rect.transition(t).attr("fill", d => {
+				if (!d.depth) return "#666666";
+				while (d.depth >2) d = d.parent;
+				return color( d.data.code);         
+			  })
+
+			hola = !hola;
+			//myWindow.document.write("if "+hola);
+		  }
+		  else
+		  {
+			//entra en zoom out
+			  rect.transition(t).attr("fill", d => {
+				if (!d.depth) return "#666666";
+				while (d.depth >1) d = d.parent;
+				return color3( d.data.name);
+			})
+
+			hola = !hola;
+			//myWindow.document.write("else "+hola);
+		  }
+		}
+		//fin del if
+	  }
+	  
+	  function rectHeight(d) {
+		return d.x1 - d.x0 - Math.min(1, (d.x1 - d.x0) / 2);
+	  }
+	  
+	  function textHeight(d) {
+		var tamanio= (d.x1 - d.x0 - Math.min(1, (d.x1 - d.x0) / 2))/6;
+		if (tamanio<14)
+		{
+			return 14;
+		} else if (tamanio>60)
+		{
+			return 65;
+		}
+		return tamanio;
+	  }
+
+	  function labelVisible(d) {
+		return d.y1 <= width && d.y0 >= 0 && d.x1 - d.x0 > 16;
+	  }		
+			
 		//fin de la funcion
 	});		
 		

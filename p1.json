@@ -239,7 +239,7 @@
    },
    
      {
-   "name": "Alpine, Skiing and Snowboarding",
+   "name": "Alpine Sports",
    "code": "two",
    "children": [
     {
@@ -367,7 +367,7 @@
    
      {
    "name": "Nordic Sports",
-   "code": "three",
+   "code": "two",
    "children": [
     {
      "name": "Biathlon",
