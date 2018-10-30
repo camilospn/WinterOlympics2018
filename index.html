@@ -397,8 +397,8 @@ Attribute: Number of medals Type: Quantitative, sequential. (Encoding: Express)
 		rect.transition(t).attr("height", d => rectHeight(d.target));
 		text.transition(t).attr("fill-opacity", d => +labelVisible(d.target));
 		//no funciona el cambio de tamanio en edge... 
-		text.transition(t).attr("font-size", d => textHeight(d.target));
-		text.transition(t).attr("y", d => textHeight(d.target));
+		//text.transition(t).attr("font-size", d => textHeight(d.target));
+		//text.transition(t).attr("y", d => textHeight(d.target));
 		
 		tspan.transition(t).attr("fill-opacity", d => labelVisible(d.target) * 0.7);
 		
