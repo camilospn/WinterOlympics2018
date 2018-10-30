@@ -370,8 +370,8 @@ Attribute: Number of medals Type: Quantitative, sequential. (Encoding: Express)
 		 
 
 	  cell.append("title")
-		  .text(d => `${d.data.desc}`);
-		  //.text(d => `${d.ancestors().map(d => d.data.name).reverse().join("/")}\n${format(d.value)}`);
+	      .text(d => `${d.ancestors().map(d => d.data.name).reverse().join("/")}\n${format(d.value)}`);
+
 
 	  var hola =true;
 	  function clicked(p) {
