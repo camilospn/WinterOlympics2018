@@ -3,7 +3,7 @@
 <head>
 
 	<meta charset="UTF-8">
-	<title>Exportaciones de productos tradicionales a Estados Unidos</title>
+	<title>Winter Olympics Disciplines 2018</title>
 	<style type="text/css">
 		.general{			
 			font-family: 'Alegreya', serif;
@@ -80,20 +80,29 @@
 			font-weight: bold;
 			color: #ff8239;
 			font-size: 26px;
-			font-family: 'Alegreya', serif;
+			font-family: 'Anton', sans-serif;
 		}
 		
 		.titulo {
-			font-weight: bold;
-			font-family: 'Alegreya', serif;
+			font-weight: black;
+			font-family: 'Anton', sans-serif;
 			font-size: 46px;
-			color:  #ff8239;
+			color:  #ffffff;
+			background-color: #ff8239;
+		}
+		.subtitulo {
+			font-weight: black;
+			font-family: 'Anton', sans-serif;
+			font-size: 30px;
+			color:  #333333;
+			
 		}
 		.titulo2 {
-			font-weight: bold;
-			font-family: 'Alegreya', serif;
+			font-weight: black;
+			font-family: 'Anton', sans-serif;
 			font-size: 30px;
-			color:  #ff8239;
+			color:  #ffffff;
+			background-color: #333333;
 		}
 		.texto {
 			-webkit-column-count: 3; /* Chrome, Safari, Opera */
@@ -143,7 +152,7 @@
 
 		
 	</style>
-	<link href="https://fonts.googleapis.com/css?family=Alegreya" rel="stylesheet"> 
+	<link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet"> 
 	<script type="text/javascript" src="https://d3js.org/d3.v5.min.js"></script>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -154,13 +163,14 @@
 <br/>
 <div class="text-center general">
 	<div class="row">
-		<div class="text-center col-md-offset-3 col-md-6">
-			<span class="titulo">¿Qué pasó con el TLC Colombia?</span>
-			<br/><h4>
-			Las exportaciones del Carbón y el Petróleo, dos de los productos más relevantes para Colombia han caído después del TLC.
-			
-			</h4>
-		<p>	Creado por: Camilo Espitia - Código: 200812115 - Login: jc.espitia912</p>
+		<div class="text-center  col-md-offset-2 col-md-8">
+			<span class="titulo">There are 42 chances to win an Olympic Medal in Speed Skating!</span>
+			<br/><span class="subtitulo">
+			Among the 15 disciplines at the winter olympics, Speed Skating is the widest sport while Ice Hockey is left behind.
+
+			</span>
+			<br/>
+			<p>	Created By: Camilo Espitia - Student ID: 200812115 - Login: jc.espitia912</p>
 		
 		</div>
 		
@@ -172,14 +182,14 @@
     <div class="col-md-offset-1 col-md-10" id="viz">
 			
 		<hr/>  
-			<span class="titulo2 texto2">Contexto</span>
+			<span class="titulo2 texto2">Context</span>
 			
 		
 			<p class="texto2">
 			En el año 2012, el Tratado de Libre Comercio entre los Estados Unidos y Colombia fue aprobado (Portafolio, 2018). Existían opiniones encontradas sobre sus ventajas y desventajas para el país. Uno de los principales argumentos hacía referencia a la historia de los tratados de Estados Unidos en dónde, el país norteamericano construía barreras arancelarias después de las firmas de los acuerdos, poniendo en desventaja a países con menor poder económico. Por ejemplo, en México fueron creados los subsidios para favorecer los productos del sector agrícola estadounidense, debilitando el sector local (López, 2011).
 			</p>
 			 
-			<span class="titulo2 texto2">Objetivo</span>
+			<span class="titulo2 texto2">Objective</span>
 		  
 			<p class="texto2">
 				En teoría, un tratado debería incrementar tanto la eficiencia como la tasa de crecimiento económico de un país.  Esta visualización tiene el objetivo de mostrarnos el antes y el después de las exportaciones de Colombia a Estados Unidos de los productos tradicionales como el Café, el Carbón, el Petróleo, los Derivados del Petróleo y el Ferroníquel, para ver si efectivamente el tratado de libre comercio incrementó las exportaciones o las disminuyó.
@@ -190,9 +200,9 @@
 		<div class="texto">  
 			  <span class="titulo2">WHY</span>
 			  
-			  <p><strong>Tarea principal</strong>
+			  <p><strong>Main Tasks</strong>
 			  <p><strong>T1. Summarize - Trends (Tendencia de la variación acumulada):</strong> Encontrar la tendencia creciente o descendiente de todas las exportaciones de los productos tradicionales Colombianos de las últimas decadas para evaluar el efecto del TLC firmado con Estados Unidos.
-			  <p><strong>Tareas secundarias</strong><br/>
+			  <p><strong>Secondary Tasks</strong><br/>
 			  <p><strong>T2. Identify - Extremes: </strong> Encontrar los años de mayor variación tanto positiva como negativa de cada producto para analizar posibles razones.
 			  <p><strong>T3. Identify - Trend (Variation):</strong> Identificar la tendencia de variación desde 1990 de la exportación de cada uno de los productos tradicionales.
 				
@@ -233,10 +243,10 @@
 	<div class="row">
 		<div class="text-center  col-md-12">
 			<span class="titulo">There are 42 chances to win an Olympic Medal in Speed Skating!</span>
-			<br/><h4>
+			<br/><br/><span class="subtitulo">
 			Among the 15 disciplines at the winter olympics, Speed Skating is the widest sport while Ice Hockey is left behind.
 
-			</h4>
+			</span>
 		</div>
 	</div>
 	</div>
@@ -256,7 +266,7 @@
 		.append('svg')
 		.attr('width', width)
 		.style('overflow', "hidden")
-        .style('font', "14px sans-serif")
+        .style('font', "14px sans-serif Anton")
 		.attr('height', height);
 
 		
@@ -317,6 +327,8 @@
 		  .style("user-select", "none")
 		  .attr("pointer-events", "none")
 		  .attr("font-size", d => textHeight(d))
+		  .attr("font-family",'Anton')
+		  //font-family: 'Anton', sans-serif;
 		  .attr("transform",  d => {
 			if (!d.depth) return "translate(100,600)rotate(270)"; //sino tiene padre gira
 			
@@ -412,7 +424,7 @@
 			return 14;
 		} else if (tamanio>60)
 		{
-			return 65;
+			return 73;
 		}
 		return tamanio;
 	  }
@@ -432,7 +444,7 @@
 
 	  <span class="titulo2 texto2">Insights:</span>
 	  <p >
-	  La visualización nos permite obtener los siguientes insights: 
+	  The visualization presents us the following insights: 
 		<ul>
 			<li class="texto2">La variación general de las exportaciones de los productos tradicionales comenzó a disminuir año tras año después de la firma del TLC con Estados Unidos, encontrando el pico más bajo en el año 2015. Desde entonces la disminución de las exportaciones se ha detenido pero apenas hasta dejar de disminuir año tras año.</li>
 			<li class="texto2">El Carbón y el Petróleo también encontraron sus picos más bajos en el año 2015 y en general muestran una tendencia decreciente desde 2012, cuando fue aprobado el TLC.</li>
