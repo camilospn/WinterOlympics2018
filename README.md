@@ -27,8 +27,8 @@ Autor: Camilo Espitia
 Student ID: 200812115 
 Login: jc.espitia912
 
-Link demo: https://camilospn.github.io/AccesoBibliotecasDepartamentosColombia/
-Link repository: https://github.com/camilospn/AccesoBibliotecasDepartamentosColombia
+Link demo: https://camilospn.github.io/WinterOlympics2018/
+Link repository: https://github.com/camilospn/WinterOlympics2018
 
 
 4. Screenshot
